@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-PE">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,224 +9,79 @@
 <body>
   <div class="topbar">
     <div class="container">
-      <span>Premium wellness imports from the USA to Peru</span>
-      <span>Trusted sourcing • Professional presentation • Fast quote support</span>
+      <span>Importaciones premium USA → Perú</span>
+      <span>Despacho rápido desde nuestro almacén en Lima</span>
     </div>
   </div>
 
   <header>
     <div class="container nav">
-      <a href="#" class="brand">
-        <div class="brand-mark"><img src="assets/Icon_logo.png" alt="NutriUSA logo" /></div>
+      <a href="index.html" class="brand">
+        <div class="brand-mark"><img src="assets/nutriusa-logo.svg" alt="Logo de NutriUSA" /></div>
         <div class="brand-text">
           <h1>NutriUSA Importaciones</h1>
-          <p>Luxury wellness imports</p>
+          <p>Nutrición y bienestar para el mercado peruano</p>
         </div>
       </a>
-
       <nav>
         <ul>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="categories.html">Categories</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="categories.html">Categorías</a></li>
+          <li><a href="products.html">Productos</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
-
-      <div class="nav-actions">
-        <a class="btn btn-secondary" href="#shop">Browse Products</a>
-      </div>
+      <a class="btn btn-principal" href="contact.html">Cotizar ahora</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Premium U.S. health products for the Peruvian market</div>
-          <h2>Imported wellness with a <span>refined international</span> brand presence.</h2>
+    <section class="hero-modern">
+      <div class="container hero-modern-grid">
+        <div>
+          <span class="eyebrow">Diseño moderno estilo corporativo</span>
+          <h2>Tu socio en suplementos importados con presencia digital de alto nivel.</h2>
           <p>
-            This storefront concept uses a clean luxury layout with deep navy, rich red, warm gold, and soft ivory tones to match the professional feel of your NutriUSA Importaciones logo direction.
+            Ajustamos la propuesta visual con una línea más contemporánea: base blanca, acentos dorados y azul marino, bloques limpios y navegación orientada a conversión.
           </p>
           <div class="hero-actions">
-            <a href="#shop" class="btn btn-primary">Shop Collection</a>
-            <a href="#about" class="btn btn-secondary">Learn More</a>
+            <a class="btn btn-principal" href="products.html">Ver productos</a>
+            <a class="btn btn-secundario" href="categories.html">Ver categorías</a>
           </div>
           <div class="hero-stats">
-            <div class="stat">
-              <strong>U.S. Sourced</strong>
-              <span>Premium import focus</span>
-            </div>
-            <div class="stat">
-              <strong>Luxury Brand</strong>
-              <span>Professional presentation</span>
-            </div>
-            <div class="stat">
-              <strong>Fast Inquiry</strong>
-              <span>Wholesale-ready structure</span>
-            </div>
+            <div class="stat"><strong>+120</strong><span>SKUs activos</span></div>
+            <div class="stat"><strong>48 h</strong><span>Tiempo de respuesta</span></div>
+            <div class="stat"><strong>Todo Perú</strong><span>Cobertura comercial</span></div>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <h3>Featured Imports</h3>
-            <p>Designed for supplements, proteins, wellness bundles, and premium health products.</p>
+        <div class="slider" id="slider-home" aria-label="Carrusel de productos destacados">
+          <div class="slides">
+            <article class="slide active">
+              <div class="slide-tag">Línea deportiva</div>
+              <h3>Proteínas y recuperación</h3>
+              <p>Catálogo de whey, isolate, gainers y aminoácidos para gimnasios y tiendas especializadas.</p>
+            </article>
+            <article class="slide">
+              <div class="slide-tag">Bienestar diario</div>
+              <h3>Vitaminas y minerales</h3>
+              <p>Opciones de alta rotación para retail: multivitamínicos, complejos B y defensas.</p>
+            </article>
+            <article class="slide">
+              <div class="slide-tag">Premium</div>
+              <h3>Omega, colágeno y salud integral</h3>
+              <p>Líneas de mayor valor para elevar ticket promedio y posicionar tu vitrina.</p>
+            </article>
           </div>
-          <div class="hero-products">
-            <div class="mini-product">
-              <div class="mini-thumb">WHEY</div>
-              <div>
-                <h4>Performance Protein</h4>
-                <p>Premium imported formulation</p>
-              </div>
-              <div class="price">$49</div>
+          <div class="slider-controls">
+            <button class="slider-btn" data-dir="prev" aria-label="Anterior">‹</button>
+            <div class="slider-dots" role="tablist" aria-label="Navegación del carrusel">
+              <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+              <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+              <button class="dot" data-slide="2" aria-label="Slide 3"></button>
             </div>
-            <div class="mini-product">
-              <div class="mini-thumb">VITA</div>
-              <div>
-                <h4>Daily Vitamin Pack</h4>
-                <p>Clean, trusted essentials</p>
-              </div>
-              <div class="price">$29</div>
-            </div>
-            <div class="mini-product">
-              <div class="mini-thumb">OMEGA</div>
-              <div>
-                <h4>Omega Support</h4>
-                <p>High-end wellness line</p>
-              </div>
-              <div class="price">$34</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="categories">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>Shop by Category</h3>
-            <p>Structured to feel polished and trustworthy for both retail customers and potential wholesale buyers.</p>
-          </div>
-          <span class="pill">Luxury import storefront concept</span>
-        </div>
-
-        <div class="category-grid">
-          <article class="category-card">
-            <div class="category-icon">01</div>
-            <h4>Vitamins</h4>
-            <p>Daily wellness essentials presented with a clean premium look.</p>
-          </article>
-          <article class="category-card">
-            <div class="category-icon">02</div>
-            <h4>Sports Nutrition</h4>
-            <p>Protein, recovery, and performance products for an active audience.</p>
-          </article>
-          <article class="category-card">
-            <div class="category-icon">03</div>
-            <h4>Bundles</h4>
-            <p>Curated packages for gifting, starter kits, and subscription concepts.</p>
-          </article>
-          <article class="category-card">
-            <div class="category-icon">04</div>
-            <h4>Premium Imports</h4>
-            <p>Higher-end specialty items that support the brand’s luxury positioning.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="shop">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>Featured Products</h3>
-            <p>Placeholder products are included so you can quickly swap in your real catalog later.</p>
-          </div>
-          <a href="#contact" class="pill">Need wholesale pricing?</a>
-        </div>
-
-        <div class="product-grid">
-          <article class="product-card">
-            <div class="product-image">
-              <span class="tag">Best Seller</span>
-              Whey Gold
-            </div>
-            <div class="product-meta">
-              <h4>NutriUSA Whey Gold</h4>
-              <p>Premium protein concept with a polished product card layout.</p>
-              <div class="product-bottom">
-                <span class="price">$49.00</span>
-                <a href="#">View Product</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image">
-              <span class="tag">New</span>
-              Vita Core
-            </div>
-            <div class="product-meta">
-              <h4>Daily Vita Core</h4>
-              <p>Built for multivitamins, capsule products, or wellness essentials.</p>
-              <div class="product-bottom">
-                <span class="price">$28.00</span>
-                <a href="#">View Product</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image">
-              <span class="tag">Premium</span>
-              Omega Elite
-            </div>
-            <div class="product-meta">
-              <h4>Omega Elite Formula</h4>
-              <p>Ideal for fish oil, heart support, or elevated supplement lines.</p>
-              <div class="product-bottom">
-                <span class="price">$34.00</span>
-                <a href="#">View Product</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image">
-              <span class="tag">Bundle</span>
-              Starter Kit
-            </div>
-            <div class="product-meta">
-              <h4>Wellness Starter Bundle</h4>
-              <p>A premium bundle section for promotions, subscriptions, or launches.</p>
-              <div class="product-bottom">
-                <span class="price">$79.00</span>
-                <a href="#">View Product</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="promo" id="about">
-      <div class="container">
-        <div class="promo-box">
-          <div>
-            <h3>A professional storefront that feels established from day one.</h3>
-            <p>
-              This layout is intentionally simple, premium, and easy to expand. You can add your actual logo image, product photos, shopping cart functionality, and checkout later while keeping this same visual direction.
-            </p>
-            <a class="btn btn-primary" href="#contact">Request Product Access</a>
-          </div>
-          <div class="promo-form">
-            <label for="email">Wholesale / customer inquiry</label>
-            <input id="email" type="email" placeholder="Enter your email address" />
-            <button class="btn btn-primary">Join Waitlist</button>
+            <button class="slider-btn" data-dir="next" aria-label="Siguiente">›</button>
           </div>
         </div>
       </div>
@@ -236,78 +91,87 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h3>Why This Style Works</h3>
-            <p>It positions NutriUSA Importaciones closer to a premium import brand than a generic supplement shop.</p>
+            <h3>Experiencia pensada para cliente final</h3>
+            <p>Compra simple, información clara y categorías listas para encontrar tu producto ideal.</p>
           </div>
         </div>
-
-        <div class="trust-grid">
-          <article class="trust-card">
-            <h4>Luxury Color Balance</h4>
-            <p>Deep navy builds trust, red adds strength, and gold gives the site a refined import feel.</p>
-          </article>
-          <article class="trust-card">
-            <h4>Clean Product Focus</h4>
-            <p>The layout keeps attention on products and brand credibility without feeling cluttered.</p>
-          </article>
-          <article class="trust-card">
-            <h4>Ready to Scale</h4>
-            <p>You can later connect this to Shopify, WooCommerce, or a custom backend without redesigning everything.</p>
-          </article>
+        <div class="feature-grid">
+          <article class="feature-card"><h4>Catálogo curado</h4><p>Selección de productos con alta demanda local y respaldo de proveedor.</p></article>
+          <article class="feature-card"><h4>Apoyo comercial</h4><p>Material para campañas, recomendaciones de mix y priorización por margen.</p></article>
+          <article class="feature-card"><h4>Operación eficiente</h4><p>Reposición planificada, coordinación logística y visibilidad de categorías.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>Categorías destacadas</h3>
+            <p>Una estructura clara para que tus clientes encuentren rápido lo que buscan.</p>
+          </div>
+          <a class="pill" href="categories.html">Ir a categorías</a>
+        </div>
+        <div class="category-grid">
+          <article class="category-card"><div class="category-icon">01</div><h4>Vitaminas</h4><p>Alta recompra y ticket accesible.</p></article>
+          <article class="category-card"><div class="category-icon">02</div><h4>Nutrición deportiva</h4><p>Proteínas, pre entreno y recuperación.</p></article>
+          <article class="category-card"><div class="category-icon">03</div><h4>Control de peso</h4><p>Líneas para objetivos de definición.</p></article>
+          <article class="category-card"><div class="category-icon">04</div><h4>Salud integral</h4><p>Omega, colágeno y bienestar premium.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip-callout">
+      <div class="container strip-callout-inner">
+        <div>
+          <h3>¿Listo para comprar desde nuestra tienda online?</h3>
+          <p>Importamos, almacenamos y te entregamos directamente en Perú con una experiencia de compra confiable.</p>
+        </div>
+        <a class="btn btn-dorado" href="products.html">Empezar a comprar</a>
       </div>
     </section>
   </main>
 
-  <footer id="contact">
+  <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand" style="margin-bottom: 14px;">
-            <div class="brand-mark"><img src="assets/nutriusa-logo.svg" alt="NutriUSA logo" /></div>
-            <div class="brand-text">
-              <h1 style="color: #fff;">NutriUSA Importaciones</h1>
-              <p style="color: rgba(255,255,255,0.72);">Premium import storefront</p>
-            </div>
-          </div>
-          <p>
-            A starter storefront concept for a professional USA-to-Peru vitamin and wellness import brand.
-          </p>
+        <div>
+          <p><strong>NutriUSA Importaciones</strong></p>
+          <p>Importación y comercialización de suplementos para Perú.</p>
         </div>
-
-        <div class="footer-col">
-          <h4>Store</h4>
-          <ul>
-            <li><a href="products.html">Featured Products</a></li>
-            <li><a href="categories.html">Categories</a></li>
-            <li><a href="about.html">About the Brand</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="contact.html#shipping">Shipping Info</a></li>
-            <li><a href="contact.html#wholesale">Wholesale Inquiries</a></li>
-            <li><a href="contact.html#support">Contact Support</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><p>Email: sales@nutriusa-import.com</p></li>
-            <li><p>Lima, Peru / USA sourcing</p></li>
-            <li><p>Professional import support</p></li>
-          </ul>
-        </div>
+        <div class="footer-col"><h4>Empresa</h4><ul><li><a href="about.html">Nosotros</a></li><li><a href="categories.html">Categorías</a></li></ul></div>
+        <div class="footer-col"><h4>Comercial</h4><ul><li><a href="products.html">Productos</a></li><li><a href="contact.html">Cotizaciones</a></li></ul></div>
+        <div class="footer-col"><h4>Contacto</h4><ul><li>ventas@nutriusa-import.com</li><li>Lima, Perú</li></ul></div>
       </div>
-
-      <div class="copyright">
-        <span>© 2026 NutriUSA Importaciones. All rights reserved.</span>
-        <span>Designed as a clean HTML + CSS storefront concept.</span>
-      </div>
+      <div class="copyright"><span>© 2026 NutriUSA Importaciones.</span><span>Diseño moderno en español peruano.</span></div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const slider = document.getElementById('slider-home');
+      if (!slider) return;
+      const slides = Array.from(slider.querySelectorAll('.slide'));
+      const dots = Array.from(slider.querySelectorAll('.dot'));
+      const prev = slider.querySelector('[data-dir="prev"]');
+      const next = slider.querySelector('[data-dir="next"]');
+      let current = 0;
+
+      function render(index) {
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        current = index;
+      }
+
+      function go(step) {
+        render((current + step + slides.length) % slides.length);
+      }
+
+      prev.addEventListener('click', () => go(-1));
+      next.addEventListener('click', () => go(1));
+      dots.forEach((dot, i) => dot.addEventListener('click', () => render(i)));
+      setInterval(() => go(1), 4500);
+    })();
+  </script>
 </body>
 </html>
