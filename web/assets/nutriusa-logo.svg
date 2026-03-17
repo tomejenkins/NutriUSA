@@ -1,0 +1,24 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D2340"/>
+      <stop offset="1" stop-color="#04152C"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F9E8A3"/>
+      <stop offset="0.5" stop-color="#D6AE4F"/>
+      <stop offset="1" stop-color="#9A6F1C"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" rx="30" fill="url(#bg)"/>
+  <path d="M150 45L205 58V115C205 147 182 174 150 182C118 174 95 147 95 115V58L150 45Z" fill="#0B2B4A" stroke="url(#gold)" stroke-width="6"/>
+  <path d="M150 52V174" stroke="url(#gold)" stroke-width="4"/>
+  <path d="M150 55C161 62 169 73 173 87C178 104 176 124 168 140C163 150 157 158 150 164" fill="#B22222"/>
+  <path d="M150 55C139 62 131 73 127 87C122 104 124 124 132 140C137 150 143 158 150 164" fill="#113E6A"/>
+  <path d="M58 96C74 74 85 65 97 56" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M242 96C226 74 215 65 203 56" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="150" cy="28" r="8" fill="url(#gold)"/>
+  <path d="M31 224C74 256 226 256 269 224" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
+  <text x="150" y="228" text-anchor="middle" font-size="48" font-family="Georgia, serif" fill="url(#gold)" font-weight="700">NutriUSA</text>
+  <text x="150" y="258" text-anchor="middle" font-size="18" letter-spacing="3" font-family="Arial, sans-serif" fill="url(#gold)">IMPORTACIONES</text>
+</svg>
