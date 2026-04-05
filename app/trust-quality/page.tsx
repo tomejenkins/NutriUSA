@@ -1,0 +1,2 @@
+import { SimplePage } from "@/components/sections/simple-page";
+export default function TrustPage(){return <SimplePage title="Why NutriUSA Importaciones" subtitle="Trust and quality framework with placeholder modules for verified certifications." points={["Quality checks and documentation workflow.","Imported logistics process with controlled handling.","Transparent ingredient and sourcing communication.","Customer-first support and educational roadmap."]}/>}
