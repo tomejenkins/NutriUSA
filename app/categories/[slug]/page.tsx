@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { CategoryTemplate } from "@/components/sections/category-template";
 import { repo } from "@/lib/api/repository";
 
+export const runtime = 'edge';
 export default async function CategoryDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const category = await repo.getCategory(slug);

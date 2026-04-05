@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/cards/product-card";
 import { Button } from "@/components/ui/button";
 import { repo } from "@/lib/api/repository";
 
+export const runtime = 'edge';
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const product = await repo.getProduct(slug);

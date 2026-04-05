@@ -39,3 +39,11 @@ npm run dev
 ## Add products later
 - Add structured product objects to `lib/data/mock.ts` (`products` array).
 - Ensure `slug`, `categorySlug`, and tags are set for filtering and routing.
+
+## Cloudflare Pages notes
+When deploying this App Router project on Cloudflare Pages (especially with `@cloudflare/next-on-pages`), enable Node.js compatibility:
+
+1. In Cloudflare Pages → your project → **Settings** → **Functions** → **Compatibility flags**, add `nodejs_compat` for both **Preview** and **Production**.
+2. Keep `wrangler.toml` in the repo with matching settings (`compatibility_flags = ["nodejs_compat"]`).
+
+Without that flag, Pages can show a **Node.JS Compatibility Error** at runtime.
