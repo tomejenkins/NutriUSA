@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/sections/page-hero";
 import { repo } from "@/lib/api/repository";
 
+export const runtime = 'edge';
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = await repo.getArticle(slug);
