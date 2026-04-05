@@ -1,0 +1,2 @@
+import { SimplePage } from "@/components/sections/simple-page";
+export default function AboutPage(){return <SimplePage title="About NutriUSA Importaciones" subtitle="Building a premium USA + Peru wellness bridge through trusted imported products." points={["Mission-driven sourcing with transparent standards.","Designed for long-term customer education.","Structured for future multilingual commerce rollout."]}/>}
