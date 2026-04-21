@@ -1,0 +1,19 @@
+<article class="card-surface product-card">
+  <a href="{{ product.url }}" class="product-card__image-wrap">
+    {% render 'card-image', image: product.featured_image, width: 800, alt: product.title, class: 'product-card__image' %}
+  </a>
+  {% if product.type != blank %}<p class="product-card__type">{{ product.type }}</p>{% endif %}
+  <h3 class="product-card__title"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+  <p class="product-card__subtitle">{{ product.vendor }}</p>
+  <div class="product-card__price-row">
+    {% render 'price', product: product, use_variant: true %}
+    {% unless product.available %}<span class="sold-out">Sold out</span>{% endunless %}
+  </div>
+  <div class="product-card__actions">
+    <a href="{{ product.url }}" class="btn btn--outline">View</a>
+    {% form 'product', product, class: 'inline-product-form', data-ajax-add: 'true' %}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <button type="submit" class="btn btn--premium" {% unless product.available %}disabled{% endunless %}>Add</button>
+    {% endform %}
+  </div>
+</article>

@@ -1,0 +1,44 @@
+<section class="container-shell py-section grid split-grid">
+  <div class="card-surface">
+    <h2 class="section-title">{{ section.settings.testimonials_heading }}</h2>
+    <div class="stack mt-4">
+      {% for block in section.blocks %}
+        {% if block.type == 'testimonial' %}
+          <blockquote class="quote" {{ block.shopify_attributes }}>
+            <p>“{{ block.settings.quote }}”</p>
+            <footer>{{ block.settings.name }} · {{ block.settings.role }}</footer>
+          </blockquote>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="card-surface">
+    <h2 class="section-title">{{ section.settings.faq_heading }}</h2>
+    <div class="stack mt-4">
+      {% for block in section.blocks %}
+        {% if block.type == 'faq' %}
+          <details class="faq-item" {{ block.shopify_attributes }}>
+            <summary>{{ block.settings.question }}</summary>
+            <p>{{ block.settings.answer }}</p>
+          </details>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":"Testimonials + FAQ",
+  "settings":[
+    {"type":"text","id":"testimonials_heading","label":"Testimonials heading","default":"Testimonials"},
+    {"type":"text","id":"faq_heading","label":"FAQ heading","default":"FAQ Preview"}
+  ],
+  "blocks":[
+    {"type":"testimonial","name":"Testimonial","settings":[{"type":"textarea","id":"quote","label":"Quote"},{"type":"text","id":"name","label":"Name"},{"type":"text","id":"role","label":"Role"}]},
+    {"type":"faq","name":"FAQ item","settings":[{"type":"text","id":"question","label":"Question"},{"type":"textarea","id":"answer","label":"Answer"}]}
+  ],
+  "presets":[{"name":"Testimonials + FAQ","blocks":[{"type":"testimonial"},{"type":"testimonial"},{"type":"faq"},{"type":"faq"}]}]
+}
+{% endschema %}

@@ -1,0 +1,5 @@
+{% if image != blank %}
+  {{ image | image_url: width: width | image_tag: alt: alt, class: class }}
+{% else %}
+  {{ 'product-1' | placeholder_svg_tag: class }}
+{% endif %}

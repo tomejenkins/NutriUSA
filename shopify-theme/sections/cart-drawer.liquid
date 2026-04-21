@@ -1,0 +1,27 @@
+<aside class="cart-drawer" data-cart-drawer aria-hidden="true">
+  <div class="cart-drawer__backdrop js-close-cart"></div>
+  <div class="cart-drawer__panel" role="dialog" aria-label="Cart drawer">
+    <header class="cart-drawer__header">
+      <h2>Cart</h2>
+      <button type="button" class="icon-btn js-close-cart" aria-label="Close">✕</button>
+    </header>
+    <div class="cart-drawer__body" data-cart-drawer-body>
+      {% if cart.item_count == 0 %}
+        <p class="text-sm">Your cart is empty.</p>
+      {% else %}
+        {% for item in cart.items %}
+          {% render 'cart-line-item', item: item %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    <footer class="cart-drawer__footer">
+      <p>Subtotal: <strong data-cart-total>{{ cart.total_price | money }}</strong></p>
+      <a href="{{ routes.cart_url }}" class="btn btn--outline">View cart</a>
+      <button class="btn btn--premium" onclick="window.location='{{ routes.cart_url }}'">Checkout</button>
+    </footer>
+  </div>
+</aside>
+
+{% schema %}
+{"name":"Cart drawer","settings":[]}
+{% endschema %}

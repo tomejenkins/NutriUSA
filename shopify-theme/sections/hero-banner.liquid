@@ -1,0 +1,49 @@
+<section class="hero-carousel" data-hero-carousel data-interval="5000">
+  {% for block in section.blocks %}
+    <article class="hero-slide{% if forloop.first %} is-active{% endif %}" {{ block.shopify_attributes }}>
+      {% assign desktop = block.settings.image_desktop %}
+      {% assign mobile = block.settings.image_mobile | default: block.settings.image_desktop %}
+      {% if desktop != blank %}
+        <picture>
+          <source media="(max-width: 767px)" srcset="{{ mobile | image_url: width: 1000 }}">
+          {{ desktop | image_url: width: 2400 | image_tag: loading: 'lazy', class: 'hero-slide__image', alt: block.settings.heading }}
+        </picture>
+      {% endif %}
+      <div class="hero-slide__overlay"></div>
+      <div class="container-shell hero-slide__content">
+        <p class="hero-slide__subtitle">{{ block.settings.subtitle }}</p>
+        <h1 class="hero-slide__title">{{ block.settings.heading }}</h1>
+        <p class="hero-slide__body">{{ block.settings.body }}</p>
+        <div class="hero-slide__cta-row">
+          {% if block.settings.primary_label != blank %}<a href="{{ block.settings.primary_link }}" class="btn btn--premium">{{ block.settings.primary_label }}</a>{% endif %}
+          {% if block.settings.secondary_label != blank %}<a href="{{ block.settings.secondary_link }}" class="btn btn--secondary">{{ block.settings.secondary_label }}</a>{% endif %}
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Hero banner",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {"type":"image_picker","id":"image_desktop","label":"Desktop image"},
+        {"type":"image_picker","id":"image_mobile","label":"Mobile image"},
+        {"type":"text","id":"subtitle","label":"Subtitle","default":"NutriUSA Importaciones"},
+        {"type":"text","id":"heading","label":"Heading","default":"Premium Wellness, Imported with Purpose"},
+        {"type":"textarea","id":"body","label":"Body","default":"Trusted supplements curated for modern families and high-performance lifestyles."},
+        {"type":"text","id":"primary_label","label":"Primary button label","default":"Explore Catalog"},
+        {"type":"url","id":"primary_link","label":"Primary button link"},
+        {"type":"text","id":"secondary_label","label":"Secondary button label","default":"Why Trust Us"},
+        {"type":"url","id":"secondary_link","label":"Secondary button link"}
+      ]
+    }
+  ],
+  "presets": [{"name": "Hero banner", "blocks": [{"type":"slide"},{"type":"slide"}]}]
+}
+{% endschema %}

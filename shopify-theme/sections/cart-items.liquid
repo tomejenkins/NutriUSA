@@ -1,0 +1,24 @@
+<section class="container-shell py-section">
+  <h1 class="section-title">Your cart</h1>
+
+  {% if cart.item_count == 0 %}
+    <div class="card-surface mt-6">
+      <p>Your cart is empty.</p>
+      <a href="{{ routes.all_products_collection_url }}" class="btn btn--outline mt-4">Continue shopping</a>
+    </div>
+  {% else %}
+    <form action="{{ routes.cart_url }}" method="post" novalidate class="cart-table">
+      {% for item in cart.items %}
+        {% render 'cart-line-item', item: item %}
+      {% endfor %}
+      <div class="cart-summary">
+        <p><strong>Subtotal:</strong> {{ cart.total_price | money }}</p>
+        <button type="submit" name="checkout" class="btn btn--premium">Checkout</button>
+      </div>
+    </form>
+  {% endif %}
+</section>
+
+{% schema %}
+{"name":"Cart items","settings":[]}
+{% endschema %}

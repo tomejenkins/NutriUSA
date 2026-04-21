@@ -1,0 +1,45 @@
+<header class="site-header">
+  <div class="site-header__notice">{{ section.settings.notice_text }}</div>
+  <div class="container-shell site-header__main">
+    <a href="{{ routes.root_url }}" class="site-header__logo">
+      {% if section.settings.logo != blank %}
+        {{ section.settings.logo | image_url: width: 340 | image_tag: alt: shop.name, widths: '170,340', class: 'logo-image' }}
+      {% else %}
+        <span class="logo-fallback">{{ shop.name }}</span>
+      {% endif %}
+    </a>
+
+    <nav class="site-header__nav" aria-label="Primary">
+      {% for link in section.settings.menu.links %}
+        <a href="{{ link.url }}" class="site-header__nav-link">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="site-header__icons">
+      <a href="{{ routes.search_url }}" class="icon-btn" aria-label="Search">⌕</a>
+      <a href="{{ routes.account_url }}" class="icon-btn" aria-label="Account">◯</a>
+      <button class="icon-btn js-open-cart" aria-label="Cart">
+        🛒
+        <span class="cart-badge" data-cart-count>{{ cart.item_count }}</span>
+      </button>
+      <button class="icon-btn site-header__menu-btn js-toggle-mobile-menu" aria-label="Menu">☰</button>
+    </div>
+  </div>
+
+  <div class="site-header__mobile-menu" data-mobile-menu>
+    {% for link in section.settings.menu.links %}
+      <a href="{{ link.url }}" class="site-header__mobile-link">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {"type": "image_picker", "id": "logo", "label": "Logo"},
+    {"type": "link_list", "id": "menu", "label": "Main menu"},
+    {"type": "text", "id": "notice_text", "label": "Top notice", "default": "Free shipping thresholds and promo modules are configurable. English experience is active."}
+  ]
+}
+{% endschema %}

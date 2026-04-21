@@ -1,0 +1,15 @@
+<div class="cart-line-item" data-line-key="{{ item.key }}">
+  <a href="{{ item.url }}" class="cart-line-item__image-wrap">
+    {% render 'card-image', image: item.image, width: 180, alt: item.product.title, class: 'cart-line-item__image' %}
+  </a>
+  <div class="cart-line-item__info">
+    <a href="{{ item.url }}" class="cart-line-item__title">{{ item.product.title }}</a>
+    <p class="cart-line-item__variant">{{ item.variant.title }}</p>
+    <p class="cart-line-item__price">{{ item.final_line_price | money }}</p>
+    <div class="qty-row">
+      <label for="Quantity-{{ item.index }}" class="sr-only">Quantity</label>
+      <input id="Quantity-{{ item.index }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" class="qty-input" data-line-update="{{ item.key }}">
+      <button type="button" class="link-btn" data-line-remove="{{ item.key }}">Remove</button>
+    </div>
+  </div>
+</div>

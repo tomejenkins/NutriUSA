@@ -1,0 +1,70 @@
+{% liquid
+  assign section_title = section.settings.title
+  assign source = section.settings.source
+  assign limit = section.settings.products_limit
+%}
+<section class="container-shell py-section">
+  <div class="section-head">
+    <h2 class="section-title">{{ section_title }}</h2>
+    {% if section.settings.button_label != blank %}
+      <a href="{{ section.settings.button_link }}" class="btn btn--outline">{{ section.settings.button_label }}</a>
+    {% endif %}
+  </div>
+
+  {% if source == 'collection_list' %}
+    <div class="grid grid--three">
+      {% for block in section.blocks %}
+        {% assign collection = block.settings.collection %}
+        {% if collection != blank %}
+          <a class="card-surface" href="{{ collection.url }}" {{ block.shopify_attributes }}>
+            <h3 class="text-lg">{{ collection.title }}</h3>
+            <p class="text-sm">{{ collection.description | strip_html | truncate: 130 }}</p>
+            <p class="text-link">Explore collection →</p>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% elsif source == 'related' and product %}
+    <div class="grid grid--four">
+      {% assign related_collection = product.collections.first %}
+      {% if related_collection != blank %}
+        {% for related_product in related_collection.products limit: limit %}
+          {% if related_product.id != product.id %}
+            {% render 'product-card', product: related_product %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% else %}
+    {% assign collection = section.settings.collection %}
+    <div class="grid grid--four">
+      {% if collection != blank %}
+        {% for product in collection.products limit: limit %}
+          {% render 'product-card', product: product %}
+        {% endfor %}
+      {% else %}
+        {% for product in collections.all.products limit: limit %}
+          {% render 'product-card', product: product %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "settings": [
+    {"type":"text","id":"title","label":"Heading","default":"Featured Products"},
+    {"type":"select","id":"source","label":"Source type","default":"collection","options":[{"value":"collection","label":"Product collection"},{"value":"collection_list","label":"Collection cards"},{"value":"related","label":"Related to product"}]},
+    {"type":"collection","id":"collection","label":"Collection"},
+    {"type":"range","id":"products_limit","min":4,"max":12,"step":1,"default":8,"label":"Items"},
+    {"type":"text","id":"button_label","label":"Button label","default":"View catalog"},
+    {"type":"url","id":"button_link","label":"Button link"}
+  ],
+  "blocks": [
+    {"type":"collection","name":"Collection","settings":[{"type":"collection","id":"collection","label":"Collection"}]}
+  ],
+  "presets":[{"name":"Featured collection"}]
+}
+{% endschema %}
