@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {"type": "color", "id": "color_navy", "label": "Navy", "default": "#0E2341"},
+      {"type": "color", "id": "color_gold", "label": "Gold", "default": "#C8A45B"},
+      {"type": "color", "id": "color_slatewarm", "label": "Slate Warm", "default": "#65758B"},
+      {"type": "color", "id": "color_cream", "label": "Cream", "default": "#F7F4EE"}
+    ]
+  }
+]

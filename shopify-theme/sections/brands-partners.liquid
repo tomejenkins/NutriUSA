@@ -1,0 +1,20 @@
+<section class="container-shell py-section">
+  <h2 class="section-title">{{ section.settings.heading }}</h2>
+  <div class="grid grid--three mt-6">
+    {% for block in section.blocks %}
+      <article class="card-surface" {{ block.shopify_attributes }}>
+        <h3 class="text-lg">{{ block.settings.name }}</h3>
+        <p class="text-sm">{{ block.settings.summary }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":"Brands and partners",
+  "settings":[{"type":"text","id":"heading","label":"Heading","default":"Brands & Partners"}],
+  "blocks":[{"type":"brand","name":"Brand","settings":[{"type":"text","id":"name","label":"Name"},{"type":"textarea","id":"summary","label":"Summary"}]}],
+  "presets":[{"name":"Brands and partners","blocks":[{"type":"brand"},{"type":"brand"},{"type":"brand"}]}]
+}
+{% endschema %}

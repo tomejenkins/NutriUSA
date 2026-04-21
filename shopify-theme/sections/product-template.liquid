@@ -1,0 +1,42 @@
+<section class="container-shell py-section" data-product-root>
+  <div class="product-layout">
+    <div class="product-media">
+      {% if product.selected_or_first_available_variant.featured_image %}
+        {{ product.selected_or_first_available_variant.featured_image | image_url: width: 1400 | image_tag: class: 'product-media__image', alt: product.title }}
+      {% elsif product.featured_image %}
+        {{ product.featured_image | image_url: width: 1400 | image_tag: class: 'product-media__image', alt: product.title }}
+      {% endif %}
+    </div>
+
+    <div>
+      {% if product.vendor != blank %}<p class="product-kicker">{{ product.vendor }}</p>{% endif %}
+      <h1 class="product-title">{{ product.title }}</h1>
+      <div class="price-wrap" id="price-{{ section.id }}">{% render 'price', product: product, use_variant: true %}</div>
+      <div class="rte text-sm">{{ product.description }}</div>
+
+      {% form 'product', product, class: 'product-form', data-ajax-add: 'true' %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-variant-id>
+
+        {% unless product.has_only_default_variant %}
+          {% for option in product.options_with_values %}
+            <label class="form-label" for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+            <select id="Option-{{ section.id }}-{{ forloop.index0 }}" class="form-select" data-option-select>
+              {% for value in option.values %}
+                <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+              {% endfor %}
+            </select>
+          {% endfor %}
+          <script type="application/json" data-product-json>{{ product | json }}</script>
+        {% endunless %}
+
+        <button type="submit" class="btn btn--premium" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
+          {% if product.selected_or_first_available_variant.available %}Add to cart{% else %}Sold out{% endif %}
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{"name":"Product template","settings":[]}
+{% endschema %}

@@ -1,0 +1,7 @@
+{
+  "sections": {
+    "main": {"type": "product-template", "settings": {}},
+    "related": {"type": "featured-collection", "settings": {"title": "Related products", "source": "related", "products_limit": 4}}
+  },
+  "order": ["main", "related"]
+}

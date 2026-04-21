@@ -1,0 +1,47 @@
+<footer class="site-footer">
+  <div class="container-shell site-footer__grid">
+    <div>
+      {% if section.settings.logo != blank %}
+        {{ section.settings.logo | image_url: width: 360 | image_tag: alt: shop.name, class: 'logo-image logo-image--footer' }}
+      {% else %}
+        <p class="logo-fallback">{{ shop.name }}</p>
+      {% endif %}
+      <p class="site-footer__copy">{{ section.settings.description }}</p>
+    </div>
+
+    <div>
+      <h3 class="site-footer__title">{{ section.settings.col_1_title }}</h3>
+      <ul class="site-footer__list">
+        {% for link in section.settings.col_1_menu.links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3 class="site-footer__title">{{ section.settings.col_2_title }}</h3>
+      <ul class="site-footer__list">
+        {% for link in section.settings.col_2_menu.links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3 class="site-footer__title">{{ section.settings.col_3_title }}</h3>
+      <ul class="site-footer__list">
+        {% for link in section.settings.col_3_menu.links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {"type":"image_picker","id":"logo","label":"Logo"},
+    {"type":"textarea","id":"description","label":"Description","default":"Premium imported wellness, built for trust, education, and long-term health routines."},
+    {"type":"text","id":"col_1_title","label":"Column 1 title","default":"Shop"},
+    {"type":"link_list","id":"col_1_menu","label":"Column 1 menu"},
+    {"type":"text","id":"col_2_title","label":"Column 2 title","default":"Company"},
+    {"type":"link_list","id":"col_2_menu","label":"Column 2 menu"},
+    {"type":"text","id":"col_3_title","label":"Column 3 title","default":"Legal"},
+    {"type":"link_list","id":"col_3_menu","label":"Column 3 menu"}
+  ]
+}
+{% endschema %}
